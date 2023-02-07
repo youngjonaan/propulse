@@ -32,7 +32,7 @@ boundaryField
         value           uniform 0;
     }
 
-    wall
+    in
     {
         type            nutkWallFunction;
         value           uniform 0;
