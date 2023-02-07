@@ -16,14 +16,14 @@ FoamFile
 
 backgroundMesh
 {
-    xMinIn    -1.898465;
-    xMaxIn    1.898465;
-    xMinOut -5.416785;
-    xMaxOut  5.416785;
-    yMin    -0.053166;
-    yMax    45.791596;
-    zMin    0;
-    zMax    245;
+    xMinIn    -1.9;
+    xMaxIn    1.9;
+    xMinOut -5.45;
+    xMaxOut  5.45;
+    yMin    -0.055;
+    yMax    45.8;
+    zMin    0.5;
+    zMax    244.5;
     zCells  1000;
     xCells  #calc "round($zCells * (($xMaxOut - $xMinOut)/($zMax - $zMin)))";
     yCells  #calc "round($zCells * (($yMax - $yMin)/($zMax - $zMin)))";
