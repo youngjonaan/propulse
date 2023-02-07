@@ -22,7 +22,7 @@ backgroundMesh
     yMax    0.071;
     zMin    0.032;
     zMax    0.274;
-    zCells  500;
+    zCells  1000;
     xCells  #calc "round($zCells * (($xMax - $xMin)/($zMax - $zMin)))";
     yCells  #calc "round($zCells * (($yMax - $yMin)/($zMax - $zMin)))";
 }

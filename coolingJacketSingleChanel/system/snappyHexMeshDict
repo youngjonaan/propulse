@@ -15,8 +15,8 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 // Which of the steps to run
-castellatedMesh false;
-snap            false;
+castellatedMesh true;
+snap            true;
 addLayers       true;
 
 
@@ -116,7 +116,7 @@ castellatedMeshControls
         }
     }
 
-    resolveFeatureAngle 30;
+    resolveFeatureAngle 1;
 
 
     // Region-wise refinement
