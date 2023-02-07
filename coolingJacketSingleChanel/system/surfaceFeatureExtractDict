@@ -14,14 +14,14 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-internal.stl
+in.stl
 {
     extractionMethod    extractFromSurface;
     includedAngle       150;
     writeObj            yes;
 }
 
-external.stl
+out.stl
 {
     extractionMethod    extractFromSurface;
     includedAngle       150;

@@ -28,15 +28,15 @@ addLayers       true;
 // - to 'snap' the mesh boundary to the surface
 geometry
 {
-    internal.stl
+    in.stl
     {
         type triSurfaceMesh;
-        name internal;
+        name in;
     }
-    external.stl
+    out.stl
     {
         type triSurfaceMesh;
-        name external;
+        name out;
     }
 
 }
@@ -82,8 +82,8 @@ castellatedMeshControls
     features
     (
         {
-            file "internal.eMesh"; 
-            level 2;
+            file "in.eMesh"; 
+            level 1;
         }
                 {
             file "external.eMesh"; 
@@ -104,12 +104,12 @@ castellatedMeshControls
 
     refinementSurfaces
     {
-        internal
+        in
         {
             // Surface-wise min and max refinement level
-            level (2 2);
+            level (1 1);
         }
-        external
+        out
         {
             // Surface-wise min and max refinement level
             level (0 0);
@@ -147,7 +147,7 @@ castellatedMeshControls
     // NOTE: This point should never be on a face, always inside a cell, even
     // after refinement.
     // This is an outside point locationInMesh (-0.033 -0.033 0.0033);
-    locationInMesh (0.004 0.065 0.27); // Inside point
+    locationInMesh (0 0.019 0.002); // Inside point
 
     // Whether any faceZones (as specified in the refinementSurfaces)
     // are only on the boundary of corresponding cellZones or also allow
@@ -202,7 +202,7 @@ addLayersControls
 {
     // Are the thickness parameters below relative to the undistorted
     // size of the refined cell outside layer (true) or absolute sizes (false).
-    relativeSizes false;
+    relativeSizes true;
 
     // Per final patch (so not geometry!) the layer information
     layers
@@ -214,19 +214,19 @@ addLayersControls
     }
 
     // Expansion factor for layer mesh
-    expansionRatio 1.27;
+    expansionRatio 1.3;
 
 
     // Wanted thickness of final added cell layer. If multiple layers
     // is the thickness of the layer furthest away from the wall.
     // Relative to undistorted size of cell outside layer.
     // See relativeSizes parameter.
-    firstLayerThickness 4.98e-3;
-
+    //firstLayerThickness 4.98e-3;
+    finalLayerThickness 1.0;
     // Minimum thickness of cell layer. If for any reason layer
     // cannot be above minThickness do not add layer.
     // See relativeSizes parameter.
-    minThickness 5e-5;
+    minThickness 0.05;
 
     // If points get not extruded do nGrow layers of connected faces that are
     // also not grown. This helps convergence of the layer addition process
