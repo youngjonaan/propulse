@@ -16,14 +16,16 @@ FoamFile
 
 backgroundMesh
 {
-    xMin    -1.898465;
-    xMax    1.898465;
+    xMinIn    -1.898465;
+    xMaxIn    1.898465;
+    xMinOut -5.416785;
+    xMaxOut  5.416785;
     yMin    -0.053166;
     yMax    45.791596;
     zMin    0;
     zMax    245;
     zCells  1000;
-    xCells  #calc "round($zCells * (($xMax - $xMin)/($zMax - $zMin)))";
+    xCells  #calc "round($zCells * (($xMaxOut - $xMinOut)/($zMax - $zMin)))";
     yCells  #calc "round($zCells * (($yMax - $yMin)/($zMax - $zMin)))";
 }
 
@@ -31,15 +33,15 @@ scale   0.001;
 
 vertices
 (
-    ($:backgroundMesh.xMin $:backgroundMesh.yMin $:backgroundMesh.zMin) // 0
-    ($:backgroundMesh.xMax $:backgroundMesh.yMin $:backgroundMesh.zMin) // 1
-    ($:backgroundMesh.xMax $:backgroundMesh.yMax $:backgroundMesh.zMin) // 2
-    ($:backgroundMesh.xMin $:backgroundMesh.yMax $:backgroundMesh.zMin) // 3
+    ($:backgroundMesh.xMinIn $:backgroundMesh.yMin $:backgroundMesh.zMin) // 0
+    ($:backgroundMesh.xMaxIn $:backgroundMesh.yMin $:backgroundMesh.zMin) // 1
+    ($:backgroundMesh.xMaxOut $:backgroundMesh.yMax $:backgroundMesh.zMin) // 2
+    ($:backgroundMesh.xMinOut $:backgroundMesh.yMax $:backgroundMesh.zMin) // 3
 
-    ($:backgroundMesh.xMin $:backgroundMesh.yMin $:backgroundMesh.zMax) // 4
-    ($:backgroundMesh.xMax $:backgroundMesh.yMin $:backgroundMesh.zMax) // 5
-    ($:backgroundMesh.xMax $:backgroundMesh.yMax $:backgroundMesh.zMax) // 6
-    ($:backgroundMesh.xMin $:backgroundMesh.yMax $:backgroundMesh.zMax) // 7
+    ($:backgroundMesh.xMinIn $:backgroundMesh.yMin $:backgroundMesh.zMax) // 4
+    ($:backgroundMesh.xMaxIn $:backgroundMesh.yMin $:backgroundMesh.zMax) // 5
+    ($:backgroundMesh.xMaxOut $:backgroundMesh.yMax $:backgroundMesh.zMax) // 6
+    ($:backgroundMesh.xMinOut $:backgroundMesh.yMax $:backgroundMesh.zMax) // 7
 );
 
 blocks
