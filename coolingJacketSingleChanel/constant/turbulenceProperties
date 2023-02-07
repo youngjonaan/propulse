@@ -18,7 +18,7 @@ simulationType RAS;
 
 RAS
 {
-    RASModel        RNGkEpsilon;
+    RASModel        kOmegaSST;
 
     turbulence          on;
     printCoeffs         on;
