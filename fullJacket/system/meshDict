@@ -21,7 +21,7 @@ surfaceFile "set.fms";
 
 minCellSize 1.5e-4;
 
-maxCellSize 1.5e-4;
+maxCellSize 2e-4;
 
 boundaryCellSize 1.5e-4;
 
