@@ -29,7 +29,6 @@ solvers
         nCellsInCoarsestLevel 1000;
         mergeLevels     1;
         mergeLevels     2;
-        }
     }
 
     "(U|k|omega|epsilon)"
