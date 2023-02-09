@@ -38,7 +38,7 @@ boundaryField
 
     walls
     {
-        type            fixedValue;
+        type            kLowReWallFunction;
         value           uniform 0;
     }
 

@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-omegaInlet      1.0;
+omegaInlet      107.6238;
 
 dimensions      [0 0 -1 0 0 0 0];
 
@@ -38,7 +38,7 @@ boundaryField
     walls
     {
         type            fixedValue;
-        value           uniform 10e6;
+        value           uniform 10e9;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
