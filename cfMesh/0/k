@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-kInlet          1.0061415;
+kInlet          0.01412;
 
 dimensions      [0 2 -2 0 0 0 0];
 
@@ -25,7 +25,7 @@ boundaryField
     inlet
     {
         type            turbulentIntensityKineticEnergyInlet;
-        intensity       0.064;    
+        intensity       0.088;    
         value           uniform $kInlet;
     }
 
