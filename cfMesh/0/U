@@ -22,12 +22,15 @@ boundaryField
 {
     inlet
     {
+        type            fixedValue;
+        value           uniform (0 0 13);
+        /*
         type            flowRateInletVelocity;
         massFlowRate    0.63;
         //rho             $rhoInlet;
         rhoInlet        0.85;
         value           $internalField;
-    }
+    */}
 
     outlet
     {
