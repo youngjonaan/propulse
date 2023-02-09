@@ -35,7 +35,7 @@ boundaryField
         value           uniform $omegaInlet;
     }
 
-    wall
+    in
     {
         type            omegaWallFunction;
         value           uniform $omegaInlet;

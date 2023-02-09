@@ -14,11 +14,11 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-Uinlet          (10 0 0);
+Uinlet          (0 0 13);
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField   uniform (0 0 0);
+internalField   uniform (0 0 13);
 
 boundaryField
 {
@@ -34,7 +34,7 @@ boundaryField
         value           uniform (0 0 0);
     }
 
-    wall
+    in
     {
         type            noSlip;
     }

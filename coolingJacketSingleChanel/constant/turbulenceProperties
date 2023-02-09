@@ -18,12 +18,12 @@ simulationType RAS;
 
 RAS
 {
-    RASModel            kOmegaSST;
+    RASModel        kOmegaSST;
 
     turbulence          on;
     printCoeffs         on;
 }
-
+/*
 LES
 {
     LESModel            SpalartAllmarasDDES;
@@ -47,5 +47,5 @@ LES
         maxDeltaRatio   1.1;
     }
 }
-
+*/
 // ************************************************************************* //
