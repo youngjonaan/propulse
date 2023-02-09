@@ -36,8 +36,8 @@ boundaryField
 
     walls
     {
-        type            epsilonWallFunction;
-        value           $internalField;
+        type            fixedValue;
+        value           uniform 0;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"

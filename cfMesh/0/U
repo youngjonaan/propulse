@@ -16,21 +16,18 @@ FoamFile
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField   uniform (0 0 13);
+internalField   uniform (0 0 10);
 
 boundaryField
 {
     inlet
-    {
+    {/*
         type            fixedValue;
-        value           uniform (0 0 13);
-        /*
+        value           uniform (0 0 13);*/
         type            flowRateInletVelocity;
-        massFlowRate    0.63;
-        //rho             $rhoInlet;
-        rhoInlet        0.85;
-        value           $internalField;
-    */}
+        massFlowRate    constant 0.02233;
+        rhoInlet        0.85;          // estimate for initial rho
+    }
 
     outlet
     {
