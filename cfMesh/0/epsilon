@@ -9,35 +9,35 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volVectorField;
-    object      U;
+    class       volScalarField;
+    object      epsilon;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
+epsInlet          4.234;
 
-internalField   uniform (0 0 13);
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform $epsInlet;
 
 boundaryField
 {
     inlet
     {
-        type            flowRateInletVelocity;
-        massFlowRate    0.63;
-        //rho             $rhoInlet;
-        rhoInlet        0.85;
-        value           $internalField;
-    }
+		type            turbulentMixingLengthDissipationRateInlet;
+		mixingLength    0.0175;
+		value			uniform 0;
+	}
 
     outlet
     {
         type            zeroGradient;
-        //value           uniform (0 0 0);
     }
 
     walls
     {
-        type            noSlip;
+        type            epsilonWallFunction;
+        value           $internalField;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
