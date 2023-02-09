@@ -39,7 +39,7 @@ boundaryField
     walls
     {
         type            kLowReWallFunction;
-        value           uniform 0;
+        value           uniform 1e-10;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
