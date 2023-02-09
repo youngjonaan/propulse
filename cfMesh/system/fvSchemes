@@ -30,13 +30,11 @@ gradSchemes
 
 divSchemes
 {
-    default         none;
-
-    div(phi,U)      bounded Gauss linearUpwind limited;
-
-    turbulence      bounded Gauss limitedLinear 1;
-    div(phi,k)      $turbulence;
-    div(phi,omega)  $turbulence;
+    default          none;
+    div(phi,U)       Gauss linearUpwindV grad(U);
+    turbulence       bounded Gauss limitedLinear 1;
+    div(phi,k)       $turbulence;
+    div(phi,omega)   $turbulence;
     div(phi,epsilon) $turbulence;
 
     div((nuEff*dev2(T(grad(U))))) Gauss linear;
@@ -44,7 +42,9 @@ divSchemes
 
 laplacianSchemes
 {
-    default         Gauss linear corrected;
+    //default	Gauss linear corrected;
+    default         Gauss linear limited 0.777;
+    //default         Gauss linear limited 0.5;
 }
 
 interpolationSchemes
@@ -54,8 +54,10 @@ interpolationSchemes
 
 snGradSchemes
 {
-    default         corrected;
+    //default         corrected;
+    default         limited 0.777;
 }
+
 
 wallDist
 {

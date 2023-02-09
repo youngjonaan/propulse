@@ -21,7 +21,7 @@ solvers
         solver          GAMG;
         preconditioner  DIC;
         tolerance       1e-06;
-        relTol          0.01;
+        relTol          0.001;
         smoother        GaussSeidel;
         directSolveCoarsest false;
         nPreSweeps      0;
@@ -68,11 +68,11 @@ SIMPLE
 {
     residualControl
     {
-        p               1e-4;
-        U               1e-4;
-        "(k|omega|epsilon)" 1e-4;
+        p               1e-6;
+        U               1e-6;
+        "(k|omega|epsilon)" 1e-6;
     }
-    nNonOrthogonalCorrectors 3;
+    nNonOrthogonalCorrectors 10;
     pRefCell        0;
     pRefValue       0;
 
@@ -87,12 +87,12 @@ relaxationFactors
 {
     fields
     {
-        p               0.3;
+        p               0.2;
     }
     equations
     {
-        U               0.7;
-        "(k|omega|epsilon)" 0.7;
+        U               0.5;
+        "(k|omega|epsilon)" 0.5;
     }
 }
 
