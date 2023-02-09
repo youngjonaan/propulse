@@ -16,7 +16,7 @@ FoamFile
 
 epsInlet          4.234;
 
-dimensions      [0 2 -2 0 0 0 0];
+dimensions      [0 2 -3 0 0 0 0];
 
 internalField   uniform $epsInlet;
 
