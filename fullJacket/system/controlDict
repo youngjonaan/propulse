@@ -48,11 +48,12 @@ runTimeModifiable true;
 
 // maxCo           1;
 
-//libs            ( "libOpenFOAM.so" "libfieldFunctionObjects.so" );
+libs            ( "libOpenFOAM.so" "libfieldFunctionObjects.so" "libscotch.so");
 functions
 {
     #includeFunc solverInfo;
     #includeFunc  mag(U);
+    
 
 }
 
