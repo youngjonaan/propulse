@@ -1,4 +1,4 @@
-solid ASCII
+solid solidSides ASCII
   facet normal 0.000000e+00 0.000000e+00 -1.000000e+00
     outer loop
       vertex   -5.021377e-03 4.937921e-02 3.050000e-02
