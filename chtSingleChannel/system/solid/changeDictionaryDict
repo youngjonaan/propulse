@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2206                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+/*
+dictionaryReplacement
+{*/
+    boundary
+    {
+        solidOutside
+        {
+            type            wall;
+        }
+		solidSides
+        {
+            type            wall;
+        }
+        solidInside
+        {
+            type            wall;
+        }
+		
+	    solidWalls
+        {
+            type            mappedWall;
+            sampleMode      nearestPatchFaceAMI;
+            sampleRegion    fluid;
+            samplePatch     fluidWalls;
+        }
+        
+    }
+    T
+    {
+        internalField   uniform 300;
+
+        boundaryField
+        {
+            solidInside
+            {
+                type            externalWallHeatFluxTemperature;
+                mode            flux;
+                q               3e5;
+                value           $internalField
+                kappaMethod     solidThermo;
+                kappaName       none;
+                //type            zeroGradient;
+            }
+            solidOutside
+            {
+                type            zeroGradient;
+            }
+            solidSides
+            {
+                type            zeroGradient;
+            }   
+            solidWalls
+            {
+                type            compressible::turbulentTemperatureCoupledBaffleMixed;
+                value           uniform 300;
+                Tnbr            T;
+                kappaMethod     solidThermo;
+                kappaName       none;
+            }
+        }
+
+    }/*
+}
+*/
+// ************************************************************************* //
