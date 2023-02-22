@@ -35,8 +35,6 @@ boundaryField
     {
         type            zeroGradient;
     }
-
-    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 // ************************************************************************* //

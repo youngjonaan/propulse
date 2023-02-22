@@ -19,11 +19,11 @@ FoamFile
 
 surfaceFile "set.fms";
 
-minCellSize 2e-4;
+minCellSize 1e-3;
 
-maxCellSize 5e-4;
+maxCellSize 1e-3;
 
-boundaryCellSize 2e-4;
+boundaryCellSize 1e-3;
 
 /*
 boundaryLayers

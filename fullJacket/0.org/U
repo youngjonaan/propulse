@@ -39,8 +39,6 @@ boundaryField
     {
         type            noSlip;
     }
-
-    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 // ************************************************************************* //

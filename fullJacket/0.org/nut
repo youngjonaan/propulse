@@ -34,11 +34,11 @@ boundaryField
 
     walls
     {
-        type            fixedValue;
-        value           uniform 1e-10;
+        type            nutkRoughWallFunction;
+        Ks              uniform 300;
+        Cs              uniform 1;
     }
 
-    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 // ************************************************************************* //

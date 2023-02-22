@@ -53,7 +53,20 @@ functions
 {
     #includeFunc solverInfo;
     #includeFunc  mag(U);
-    
+    inletQts
+    {
+        type    surfaceFieldValue;
+        libs    ("libfieldFunctionObjects.so" );
+
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             false;
+        regionType      patch;
+        name            inlet;
+        operation       areaAverage;
+        fields          (U p);
+    }
 
 }
 

@@ -40,8 +40,6 @@ boundaryField
         type            fixedValue;
         value           uniform 10e9;
     }
-
-    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 // ************************************************************************* //
